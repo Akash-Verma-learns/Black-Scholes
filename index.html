@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black-Scholes Option Pricer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Black-Scholes Option Pricer</h1>
+  <div id="controls">
+    <label for="spot">Spot Price (S):</label>
+    <input type="number" id="spot" value="100"><br>
+    <label for="strike">Strike Price (K):</label>
+    <input type="number" id="strike" value="100"><br>
+    <label for="rate">Risk-Free Rate (r):</label>
+    <input type="number" step="0.01" id="rate" value="0.05"><br>
+    <label for="volatility">Volatility Range (σ):</label>
+    <input type="number" step="0.01" id="volatilityMin" value="0.1"> to 
+    <input type="number" step="0.01" id="volatilityMax" value="0.5"><br>
+    <label for="maturity">Maturity Range (T):</label>
+    <input type="number" step="0.1" id="maturityMin" value="0.1"> to 
+    <input type="number" step="0.1" id="maturityMax" value="1"><br>
+    <button id="generateHeatmap">Generate Heatmap</button>
+  </div>
+  <div id="heatmapContainer">
+    <canvas id="heatmap"></canvas>
+  </div>
+  
+  <!-- Load external libraries first -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Load your custom scripts after -->
+  <script src="api.js"></script>
+  <script type="module" src="heatmap.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
